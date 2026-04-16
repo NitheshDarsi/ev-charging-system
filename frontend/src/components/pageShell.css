@@ -1,0 +1,181 @@
+.pageShell {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-h);
+}
+
+.pageBg {
+  position: fixed;
+  inset: 0;
+  /* background:
+    radial-gradient(900px circle at 50% 0%, rgba(192, 132, 252, 0.15), transparent 55%),
+    radial-gradient(800px circle at 80% 50%, rgba(59, 130, 246, 0.12), transparent 58%),
+    linear-gradient(180deg, rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)); */
+  background:
+    radial-gradient(900px circle at 50% 0%, rgba(16, 185, 129, 0.12), transparent 55%),
+    radial-gradient(800px circle at 80% 50%, rgba(59, 130, 246, 0.10), transparent 58%),
+    linear-gradient(180deg, rgba(6, 11, 25, 0.95), rgba(1, 4, 10, 1));
+  pointer-events: none;
+  z-index: -1;
+}
+
+.pageNavbarContainer {
+  /* No pointer-events none here, otherwise navbar can't be clicked! */
+  z-index: 100;
+}
+
+.pageWrap {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px 60px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.pageContent {
+  width: 100%;
+}
+
+.pageTitle {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  margin: 0 0 32px;
+  padding-bottom: 8px; /* Prevent text clipping from background-clip */
+  line-height: normal;
+  text-align: center;
+  /* background: linear-gradient(135deg, #fff, #a78bfa); */
+  background: linear-gradient(135deg, #fff, #34d399);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-edit {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  color: #0f172a;
+  cursor: pointer;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+.btn-edit:active {
+  transform: scale(0.96);
+}
+
+.btn-delete {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-delete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+.btn-delete:active {
+  transform: scale(0.96);
+}
+
+.glass-input, .glass-select {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(229, 231, 235, 0.18);
+  background: rgba(2, 6, 23, 0.55);
+  color: #fff;
+  transition: all 0.2s ease;
+  outline: none;
+  font-family: inherit;
+  color-scheme: dark;
+}
+.glass-input:focus, .glass-select:focus {
+  /* border-color: rgba(192, 132, 252, 0.6); */
+  /* box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.12); */
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  background: rgba(2, 6, 23, 0.7);
+}
+.glass-select option {
+  background: #0f172a;
+  color: #fff;
+}
+
+.glass-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 18px;
+  /* background: linear-gradient(135deg, #3b82f6, #c084fc); */
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  color: #0f172a;
+  cursor: pointer;
+  font-weight: 800;
+  /* box-shadow: 0 4px 15px rgba(192, 132, 252, 0.25); */
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+  transition: all 0.2s ease;
+}
+.glass-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+.glass-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  /* box-shadow: 0 6px 20px rgba(192, 132, 252, 0.45); */
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+}
+.glass-btn:not(:disabled):active {
+  transform: scale(0.96);
+}
+
+.glass-tab {
+  border: 1px solid rgba(229, 231, 235, 0.2);
+  background: rgba(2, 6, 23, 0.55);
+  color: #94a3b8;
+  padding: 14px 28px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+.glass-tab:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+.glass-tab.active {
+  /* background: linear-gradient(135deg, #3b82f6, #8b5cf6); */
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+  transform: translateY(-2px);
+}
+.glass-tab:active {
+  transform: scale(0.96);
+}
+

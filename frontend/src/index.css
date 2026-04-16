@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  /* Backup original colors */
+  /* --accent: #aa3bff; */
+  /* --accent-bg: rgba(170, 59, 255, 0.1); */
+  /* --accent-border: rgba(170, 59, 255, 0.5); */
+  
+  /* New EV Green/Blue colors */
+  --accent: #10b981;
+  --accent-bg: rgba(16, 185, 129, 0.1);
+  --accent-border: rgba(16, 185, 129, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --heading: 'Outfit', 'Inter', system-ui, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    /* Backup original dark mode colors */
+    /* --accent: #c084fc; */
+    /* --accent-bg: rgba(192, 132, 252, 0.15); */
+    /* --accent-border: rgba(192, 132, 252, 0.5); */
+
+    /* New EV Green/Blue dark mode colors */
+    --accent: #34d399;
+    --accent-bg: rgba(52, 211, 153, 0.15);
+    --accent-border: rgba(52, 211, 153, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* background: radial-gradient(circle at 50% 0%, #1c1c2b 0%, #08060d 100%); */
+  background: radial-gradient(circle at 50% 0%, #0a1128 0%, #01040a 100%);
+  color: var(--text);
+  overflow-x: hidden;
+  display: block; /* Restore normal block flow */
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  /* background: linear-gradient(180deg, #aa3bff, #c084fc); */
+  background: linear-gradient(180deg, #10b981, #3b82f6);
+  border-radius: 10px;
+  border: 2px solid #08060d;
+}
+::-webkit-scrollbar-thumb:hover {
+  /* background: #c084fc; */
+  background: #3b82f6;
+}
+
+
+
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+select option {
+  background-color: #1e293b;
+  color: #f8fafc;
+  font-weight: 600;
+  padding: 8px;
+}
+
+/* Bookings Grid - 2 per row on desktop */
+.bookings-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .bookings-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
